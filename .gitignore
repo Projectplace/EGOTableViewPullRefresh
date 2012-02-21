@@ -36,8 +36,7 @@ Thumbs.db
 
 # Specific files #
 ##################
-DocumentCollaboration.app
-DocumentCollaborationTests.octest
-DocumentCollaboration.xcodeproj/project.xcworkspace
-DocumentCollaboration.xcodeproj/xcuserdata
+*.app
+*.octest
+xcuserdata
 
