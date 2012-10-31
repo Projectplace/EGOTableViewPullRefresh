@@ -172,8 +172,6 @@
 			[CATransaction commit];
 			
 			break;
-		default:
-			break;
 	}
 	
 	_state = aState;
