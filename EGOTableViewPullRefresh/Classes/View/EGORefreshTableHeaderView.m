@@ -40,7 +40,7 @@
 @synthesize delegate=_delegate;
 
 
-- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor  {
+- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor font:(UIFont *)font  {
     if((self = [super initWithFrame:frame])) {
 		
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -48,7 +48,7 @@
         
 		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		label.font = [UIFont systemFontOfSize:12.0f];
+		label.font = [UIFont systemFontOfSize:12];
 		label.textColor = textColor;
 		label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
 		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
@@ -60,7 +60,7 @@
 		
 		label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, self.frame.size.width, 20.0f)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		label.font = [UIFont boldSystemFontOfSize:13.0f];
+		label.font = font;
 		label.textColor = textColor;
 		label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
 		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
@@ -72,7 +72,7 @@
 		
 		CALayer *layer = [CALayer layer];
 		layer.frame = CGRectMake(25.0f, frame.size.height - 65.0f, 30.0f, 55.0f);
-		layer.contentsGravity = kCAGravityResizeAspect;
+		layer.contentsGravity = kCAGravityCenter;
 		layer.contents = (id)[UIImage imageNamed:arrow].CGImage;
 		
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
@@ -100,7 +100,7 @@
 }
 
 - (id)initWithFrame:(CGRect)frame  {
-    return [self initWithFrame:frame arrowImageName:@"blueArrow.png" textColor:TEXT_COLOR];
+    return [self initWithFrame:frame arrowImageName:@"blueArrow.png" textColor:TEXT_COLOR font:[UIFont boldSystemFontOfSize:13.0f]];
 }
 
 #pragma mark -
