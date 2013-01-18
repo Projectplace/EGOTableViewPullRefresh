@@ -46,7 +46,7 @@ typedef enum{
 	
     
 }
-
+@property (nonatomic) int contentInsetY;
 @property(nonatomic,assign) id <EGORefreshTableHeaderDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor font:(UIFont *)font;
