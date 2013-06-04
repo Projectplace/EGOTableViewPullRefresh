@@ -202,10 +202,6 @@
 			[self setState:EGOOPullRefreshPulling];
 		}
 		
-		if (scrollView.contentInset.top != 0) {
-			scrollView.contentInset = UIEdgeInsetsMake(self.contentInsetY, 0.0f, 0.0f, 0.0f);;
-		}
-		
 	}
 	
 }
@@ -241,7 +237,7 @@
 	
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
-	[scrollView setContentInset:UIEdgeInsetsMake(self.contentInsetY, 0.0f, 0.0f, 0.0f)];
+	[scrollView setContentInset:UIEdgeInsetsMake(0, 0.0f, 0.0f, 0.0f)];
 	[UIView commitAnimations];
 	
 	[self setState:EGOOPullRefreshNormal];
